@@ -2,18 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
 
-function tick() {
-  const element = (
-    <div>
-      <h1>Hello, world!</h1>
-      <h2>It is {new Date().toLocaleTimeString()}.</h2>
-    </div>
-  )
+// The following are all equivalent from React's point of view (slight difference with the arrow function)
+// function Welcome1(props) {
+//   return <h1>Hello, {props.name}</h1>
+// }
 
-  ReactDOM.render(
-    element,
-    document.getElementById('root')
-  )
+// const Welcome2 = (props) => {
+//   return <h1>Hello, {props.name} </h1>
+// }
+
+// class Welcome3 extends React.Component {
+//   render() {
+//     return <h1>Hello, {this.props.name}</h1>
+//   }
+// }
+
+const element = <Welcome name='Jay' />
+
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>
 }
 
-setInterval(tick, 1000)
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+)
