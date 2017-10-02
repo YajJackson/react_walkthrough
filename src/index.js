@@ -17,7 +17,25 @@ const user = {
   lastName: 'Jackson'
 }
 
-const element = <div>{getGreeting(user)}</div>
+// JSX tags may contain children
+const element = (
+  <div>
+    {getGreeting(user)}
+  </div>
+)
+
+// Babel compiles JSX down to React.createElement() calls.
+// const element = (
+//   <h1 className='greeting'>
+//     Hello, world!
+//   </h1>
+// )
+
+// const element = React.createElement(
+//   'h1',
+//   {className: 'greeting'},
+//   'hello, world!'
+// )
 
 ReactDOM.render(
   element,
